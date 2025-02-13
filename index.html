@@ -1,64 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Sofi 💖</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+	<title>Love</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	
+	<form id="login-form">
+		<label for="code">Hey beautiful! Who are you!?:</label>
+		<input type="password" id="code" name="code">
+		<button id="submit-btn">Login</button>
+	</form>
+	<div id="result"></div>
 
-    <!-- Envelope Opening Animation -->
-    <div id="envelope-container">
-        <div id="envelope">
-            <div id="flap"></div>
-            <div id="letter">
-                <p>Dear Sofi,</p>
-                <p>You are the most precious star in my sky.</p>
-                <p>Every day with you is a blessing. 💖</p>
-                <p>Click to open...</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Skip Button -->
-    <div id="skip-container">
-        <button id="skip-button">Skip</button>
-    </div>
-
-    <!-- Hidden Content (Revealed After Opening) -->
-    <div id="content" class="hidden">
-        <audio id="bg-music" loop>
-            <source src="music.mp3" type="audio/mp3">
-        </audio>
-
-        <!-- Cute Doodles -->
-        <div class="doodles">
-            <div class="heart"></div>
-            <div class="cloud"></div>
-            <div class="star"></div>
-        </div>
-
-        <!-- Floating Messages -->
-        <div class="floating-messages">
-            <p class="bubble">"You're one in a million, Sofi!"</p>
-            <p class="bubble">"Every moment with you is special!"</p>
-            <p class="bubble">"You're the stars in my night sky, and the gradient moon who makes me smile <3"</p>
-        </div>
-
-        <!-- Timer -->
-        <div id="timer">
-            <h2>Time We've Spent Together</h2>
-            <p id="time-count">Calculating...</p>
-        </div>
-
-        <!-- Dancing Animation -->
-        <div id="dance-container">
-            <div id="dancer1"></div>
-            <div id="dancer2"></div>
-        </div>
-    </div>
-
+	<script src="script.js"></script>
 </body>
 </html>
