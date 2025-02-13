@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sofi 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Envelope Opening Animation -->
+    <div id="envelope-container">
+        <div id="envelope">
+            <div id="flap"></div>
+            <div id="letter">
+                <p>Dear Sofi,</p>
+                <p>You are the most precious star in my sky, like a gradient moon for my eye</p>
+                <p>Every day with you is a blessing 🫶🏻</p>
+                <p>Click to open...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Content (Revealed After Opening) -->
+    <div id="content" class="hidden">
+        <audio id="bg-music" loop>
+            <source src="music.mp3" type="audio/mp3">
+        </audio>
+
+        <!-- Floating Heartfelt Messages -->
+        <div class="floating-messages">
+            <p class="bubble">"You're looking more gorgeous smiling Sofi!"</p>
+            <p class="bubble">"Time flies, but every moment with you is special"</p>
+            <p class="bubble">"Always here for you, my princess!"</p>
+        </div>
+
+        <!-- Friendship Timer -->
+        <div id="timer">
+            <h2>Time We've Spent Together</h2>
+            <p id="time-count">Calculating...</p>
+        </div>
+
+        <!-- Chuttamalle Dance Animation -->
+        <div id="dance-container">
+            <div id="dancer1"></div>
+            <div id="dancer2"></div>
+        </div>
+
+        <!-- Secret Star Messages -->
+        <div class="stars">
+            <div class="star" onclick="revealMessage(0)">★</div>
+            <div class="star" onclick="revealMessage(1)">★</div>
+            <div class="star" onclick="revealMessage(2)">★</div>
+        </div>
+        <p id="secret-message"></p>
+    </div>
+
+</body>
+</html>
