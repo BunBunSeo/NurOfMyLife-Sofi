@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(to right, #f0c8ff, #f9e0e5);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .love-animation-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .floating-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-stars .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: float 3s infinite linear;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        .star1 {
+            width: 6px;
+            height: 6px;
+            top: 10%;
+            left: 20%;
+            animation-duration: 5s;
+        }
+        .star2 {
+            width: 8px;
+            height: 8px;
+            top: 50%;
+            left: 50%;
+            animation-duration: 7s;
+        }
+        .star3 {
+            width: 4px;
+            height: 4px;
+            top: 80%;
+            left: 70%;
+            animation-duration: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+
+        .animated-couple {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            animation: dance 4s infinite ease-in-out;
+            transform-origin: center;
+        }
+
+        @keyframes dance {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(15deg);
+            }
+            50% {
+                transform: rotate(-15deg);
+            }
+            75% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .animated-couple img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .love-message {
+            position: absolute;
+            top: 40%;
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeInOut 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .timer {
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            animation: fadeInOut 3s ease-in-out infinite;
+            position: fixed;
+            bottom: 10%;
+        }
+
+        .heartfelt-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            max-width: 80%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .pixel-page {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: url('clouds-background.jpg') center center / cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .pixel-message {
+            font-size: 32px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeInOut 3s ease-in-out infinite;
+        }
+        
+        .envelope-animation {
+            width: 100px;
+            height: 60px;
+            background-color: #f8b3d7;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            animation: openEnvelope 2s forwards;
+        }
+
+        @keyframes openEnvelope {
+            0% {
+                width: 100px;
+                height: 60px;
+            }
+            100% {
+                width: 300px;
+                height: 150px;
+            }
+        }
+        
+        /* Gradients, Doodles, and Custom Design */
+        .doodles {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            color: #f4e1d2;
+            font-size: 36px;
+            transform: rotate(20deg);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="love-animation-container">
+        <!-- Envelope Opening Animation -->
+        <div class="envelope-animation"></div>
+
+        <!-- Animated Couple Dancing Chuttamalle -->
+        <div class="animated-couple">
+            <img src="anime-couple-dance.gif" alt="Chuttamalle Dance Couple">
+        </div>
+
+        <!-- Love Timer -->
+        <div class="timer">
+            Time together: <span id="love-timer">00:00</span>
+        </div>
+
+        <!-- Floating Stars with Heartfelt Messages -->
+        <div class="floating-stars">
+            <div class="star star1" onclick="showMessage('Sofi, you light up my world with every smile.')"></div>
+            <div class="star star2" onclick="showMessage('Every moment with you is a memory I will cherish forever.')"></div>
+            <div class="star star3" onclick="showMessage('Sofi, your love fills me with warmth and joy.')"></div>
+        </div>
+
+        <!-- Pixel Aesthetic Page with Messages -->
+        <div class="pixel-page">
+            <div class="pixel-message">Sofi, you make my world brighter, and my heart fuller. 💖</div>
+        </div>
+
+        <!-- Heartfelt Message Display -->
+        <div id="heartfelt-message" class="heartfelt-message"></div>
+
+        <!-- Doodles and Aesthetic Touches -->
+        <div class="doodles">
+            ✨🌸💖
+        </div>
+    </div>
+
+    <script>
+        // Relationship Timer
+        let startTime = new Date();
+        let loveTimer = document.getElementById("love-timer");
+
+        setInterval(function () {
+            let currentTime = new Date();
+            let diff = new Date(currentTime - startTime);
+            let minutes = diff.getUTCMinutes();
+            let seconds = diff.getUTCSeconds();
+            loveTimer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }, 1000);
+
+        // Show Message Function for Stars
+        function showMessage(message) {
+            let heartfeltMessage = document.getElementById("heartfelt-message");
+            heartfeltMessage.textContent = message;
+            heartfeltMessage.style.display = "block";
+
+            // Hide after 3 seconds
+            setTimeout(() => {
+                heartfeltMessage.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
