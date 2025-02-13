@@ -26,3 +26,27 @@ const messages = [
 function revealMessage(index) {
     document.getElementById("secret-message").innerText = messages[index];
 }
+
+/* Add Skip Button Styling */
+#skip-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+#skip-button {
+    background-color: #ff5f99;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#skip-button:hover {
+    background-color: #ff3f7f;
+}
